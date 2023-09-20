@@ -1,0 +1,18 @@
+﻿@page "/"
+
+
+<PageTitle>Index</PageTitle>
+
+<ul>
+    @foreach(var book in myService.Get())
+    {
+        <li>@book.title</li>
+        <li>@book.pages</li>
+    }
+    
+</ul>
+
+
+@code {
+    [Inject] public businessProcessor myService { get; set; }
+}
